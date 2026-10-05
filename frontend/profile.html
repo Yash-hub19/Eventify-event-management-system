@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Profile — Eventify</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app-navbar"></div>
+
+<div class="container" style="padding:40px 24px;">
+  <span class="eyebrow">Account</span>
+  <h1>My Profile</h1>
+
+  <div class="tabs" id="tabs">
+    <button class="tab-btn" data-tab="profile">Profile</button>
+    <button class="tab-btn" data-tab="bookings">My Bookings</button>
+    <button class="tab-btn" data-tab="favorites">Favorites</button>
+  </div>
+
+  <div id="tab-profile" class="tab-content"></div>
+  <div id="tab-bookings" class="tab-content hidden"></div>
+  <div id="tab-favorites" class="tab-content hidden"></div>
+</div>
+
+<div id="app-footer"></div>
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eventify — Find your next event</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="app-navbar"></div>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-badge">🎟️ 8+ live events across 8 categories</div>
+      <h1>Every event worth showing up for, in one place.</h1>
+      <p class="lead">Browse weddings, concerts, conferences, and birthdays. Book a ticket in seconds, and get a real QR ticket delivered straight to your profile.</p>
+      <div class="flex gap-16" style="margin-top:26px;">
+        <a href="#browse" class="btn btn-primary">Browse Events</a>
+        <a href="become-organizer" class="btn btn-outline">Host an Event</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong id="stat-events">--</strong><span>Live events</span></div>
+        <div><strong id="stat-cities">--</strong><span>Cities</span></div>
+        <div><strong id="stat-cats">8</strong><span>Categories</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-stub">
+        <div class="stub-top">
+          <div>
+            <div class="eyebrow">Admit One</div>
+            <h3 style="margin:2px 0 0;">Starlight Live</h3>
+          </div>
+          <span style="font-size:1.6rem;">🎵</span>
+        </div>
+        <p class="muted" style="margin-bottom:0;">Open Air Amphitheatre · Bengaluru</p>
+        <div class="stub-notch"></div>
+        <div class="flex-between">
+          <span class="ticket-code" style="color:var(--coral-dark);">EVT-8F21C0</span>
+          <strong style="font-family:var(--font-display);">₹999</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="browse">
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search events, venues, or cities..." />
+      <button class="btn btn-primary" id="search-btn">Search</button>
+    </div>
+
+    <div class="filter-panel" id="filter-panel">
+      <div class="filter-field">
+        <label for="f-category">Category</label>
+        <select id="f-category"><option value="">All categories</option></select>
+      </div>
+      <div class="filter-field">
+        <label for="f-city">Location</label>
+        <input type="text" id="f-city" placeholder="Any city" />
+      </div>
+      <div class="filter-field">
+        <label for="f-date">From date</label>
+        <input type="date" id="f-date" />
+      </div>
+      <div class="filter-field">
+        <label for="f-price">Max price (₹)</label>
+        <input type="number" id="f-price" min="0" placeholder="Any" />
+      </div>
+      <div class="filter-field">
+        <label for="f-sort">Sort by</label>
+        <select id="f-sort">
+          <option value="">Date (soonest)</option>
+          <option value="price_asc">Price: Low to High</option>
+          <option value="price_desc">Price: High to Low</option>
+          <option value="newest">Newest</option>
+          <option value="rating">Top rated</option>
+        </select>
+      </div>
+      <button class="btn btn-dark btn-sm" id="apply-filters" style="margin-top:18px;">Apply</button>
+      <button class="btn btn-ghost btn-sm" id="clear-filters" style="margin-top:18px;">Clear</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="categories" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Browse by type</span>
+        <h2>Categories</h2>
+      </div>
+    </div>
+    <div id="category-chips" class="flex gap-12" style="flex-wrap:wrap;"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" id="results-count">Loading...</span>
+        <h2>Upcoming events</h2>
+      </div>
+    </div>
+    <div id="event-grid" class="event-grid">
+      <div class="loader">Loading events…</div>
+    </div>
+    <div class="center-text" style="margin-top:32px;">
+      <button class="btn btn-outline hidden" id="load-more-btn">Load more events</button>
+    </div>
+  </div>
+</section>
+
+<div id="app-footer"></div>
+
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel — Eventify</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="app-navbar"></div>
+
+<div class="container dash-layout">
+  <aside class="dash-sidebar">
+    <a href="#overview" data-view="overview" class="nav-item active">📊 Overview</a>
+    <a href="#users" data-view="users" class="nav-item">👤 Users</a>
+    <a href="#organizers" data-view="organizers" class="nav-item">🧑‍💼 Organizers</a>
+    <a href="#events" data-view="events" class="nav-item">🎟️ Events</a>
+    <a href="#categories" data-view="categories" class="nav-item">🏷️ Categories</a>
+    <a href="#reports" data-view="reports" class="nav-item">📈 Reports</a>
+    <a href="#activity" data-view="activity" class="nav-item">🕒 Activity</a>
+  </aside>
+
+  <main class="dash-main">
+    <div id="view-overview" class="dash-view"></div>
+    <div id="view-users" class="dash-view hidden"></div>
+    <div id="view-organizers" class="dash-view hidden"></div>
+    <div id="view-events" class="dash-view hidden"></div>
+    <div id="view-categories" class="dash-view hidden"></div>
+    <div id="view-reports" class="dash-view hidden"></div>
+    <div id="view-activity" class="dash-view hidden"></div>
+  </main>
+</div>
+
+<div id="app-footer"></div>
+<script src="js/api.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
